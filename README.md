@@ -37,3 +37,9 @@ This will update rootkit hunter to the latest version.
 ![update](https://github.com/victorF29/Rootkit-Hunter/assets/145622790/5cd28104-c0e3-447c-a667-72b5b7f8cf51)
 <hr>
 
+To start Rootkit Hunter use:
+<code>rkhunter --check</code>
+
+This command scans through all directories for anomalous files permissions, hidden files, and any files/executables that may match with known rootkits.
+
+![rkrun](https://github.com/victorF29/Rootkit-Hunter/assets/145622790/6ae2d8e2-08d7-46c0-84ae-101b414be41d)
