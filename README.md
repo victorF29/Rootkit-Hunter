@@ -15,4 +15,13 @@ This demonstration will be going over how to install Rootkit Hunter, as well as 
 
 <strong>Installing Rootkit Hunter on Linux:</strong>
 
-<tt>Note: While these examples use Linux for the installation, the same steps apply to any Unix/Debian distribution. Just with slightly different commands.</tt>
+<em>Note: While these examples use Linux for the installation, the same steps apply to any Unix/Debian distribution. Just with slightly different commands.</em>
+
+Use:
+<code>apt install rkhunter</code>
+
+This will begin the installation for Rootkit Hunter (rkhunter).
+<hr>
+
+![rkdown](https://github.com/victorF29/Rootkit-Hunter/assets/145622790/62650922-938d-44a7-8f5c-9178098a95d7)
+
