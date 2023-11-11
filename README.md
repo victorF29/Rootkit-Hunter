@@ -11,7 +11,7 @@ Rootkits are self hiding program that gain root access on a computer system. Roo
 <hr>
 <h2>Using Rootkit Hunter to detect rootkits</h2>
 
-This demonstration will be going over how to install Rootkit Hunter, as well as how to use Rootkit Hunter to detect possible rootkits in a computer system. The goal of this demonstration is to expand the users knowledge of system vulnerability management, and detecting possible threats.
+This demonstration will be going over how to install Rootkit Hunter, as well as how to use Rootkit Hunter to detect possible rootkits in a computer system. The goal of this demonstration is to expand the users knowledge of system vulnerability management, system hardening, and detecting possible threats.
 
 <strong>Installing Rootkit Hunter on Linux:</strong>
 
@@ -31,7 +31,6 @@ Once installed use:
 
 This will update rootkit hunter to the latest version.
 
-<em>Note: if running the command above provides the error: "Invalid SCRIPTWHITELIST configuration option: Non-existent pathname: /bin/which" or any other subsequent "Invalid SCRIPTWHITELIST" error, this can be fixed by going into the /etc/rkhunter.conf file and looking for "SCRIPTWHITELIST <pathname>" and commenting out that line. </em>
 <hr>
 
 ![update](https://github.com/victorF29/Rootkit-Hunter/assets/145622790/5cd28104-c0e3-447c-a667-72b5b7f8cf51)
@@ -41,8 +40,10 @@ To start Rootkit Hunter use:
 <code>rkhunter --check</code>
 
 This command scans through all directories for anomalous files permissions, hidden files, and any files/executables that may match with known rootkits. This may take some time depending on how many files and directories there are.
+<hr>
 
 ![rkrun](https://github.com/victorF29/Rootkit-Hunter/assets/145622790/6ae2d8e2-08d7-46c0-84ae-101b414be41d)
+<hr>
 
 Once scanning is done, Rootkit Hunter will save all the information in a log file. To open this file run the command:
 <code>nano /var/log/rkhunter.log</code>
@@ -59,4 +60,28 @@ To set up scheduled scans run:
 After running the command it will ask which editor to use, this example will use nano (select 1) since it is more simple to use.
 
 ![crotab](https://github.com/victorF29/Rootkit-Hunter/assets/145622790/9a5cad56-234d-4eec-9819-bdfc6198373a)
+<hr>
 
+At the bottom of the text page write in the command: 
+<code>@daily /usr/bin/rkhunter --cronjob --update --quiet</code>
+
+This command will set it so that Rootkit Hunter runs automatically everyday.
+<hr>
+
+<h2>Error fixes</h2>
+
+<strong>"Invalid SCRIPTWHITELIST":</strong>
+If running the command above provides the error: "Invalid SCRIPTWHITELIST configuration option: Non-existent pathname: /bin/which" or any other subsequent "Invalid SCRIPTWHITELIST" error, this can be fixed by going into the /etc/rkhunter.conf file and looking for "SCRIPTWHITELIST <pathname>" and commenting out that line.
+
+<strong>Invalid WEB_CMD:</strong>
+If running the command above provides the error: "Invalid WEB_CMD configuration option: Relative pathname: "/bin/false"" this can be fixed by going into the /etc/rkhunter.conf file and looking for and changing these 3 variables:
+
+<em>MIRRORS_MODE=1 ---> MIRRORS_MODE=0</em>
+
+<em>UPDATE_MIRRORS=0 ---> UPDATE_MIRRORS=1</em>
+
+<em>WEB_CMD="/bin/false" ---> WEB_CMD=""</em>
+
+<h2>Concepts of this demonstration</h2>
+
+This demonstration showed how to install and run Rootkit Hunter on a system. As well as showing how Rootkit Hunter can be used to harden a system, detect system vulnerabilities and threats, and system file analysis. Since Rootkit Hunter has the chance for false positives it is best when used along side other rootkit scanners.
