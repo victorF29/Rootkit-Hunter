@@ -40,6 +40,12 @@ This will update rootkit hunter to the latest version.
 To start Rootkit Hunter use:
 <code>rkhunter --check</code>
 
-This command scans through all directories for anomalous files permissions, hidden files, and any files/executables that may match with known rootkits.
+This command scans through all directories for anomalous files permissions, hidden files, and any files/executables that may match with known rootkits. This may take some time depending on how many files and directories there are.
 
 ![rkrun](https://github.com/victorF29/Rootkit-Hunter/assets/145622790/6ae2d8e2-08d7-46c0-84ae-101b414be41d)
+
+Once scanning is done, Rootkit Hunter will save all the information in a log file. To open this file run the command:
+<code>nano /var/log/rkhunter.log</code>
+<hr>
+
+![nan](https://github.com/victorF29/Rootkit-Hunter/assets/145622790/fd258846-5825-4fd0-ab63-0fff9d57a6e3)
