@@ -81,6 +81,7 @@ If running the command above provides the error: "Invalid WEB_CMD configuration 
 <em>UPDATE_MIRRORS=0 ---> UPDATE_MIRRORS=1</em>
 
 <em>WEB_CMD="/bin/false" ---> WEB_CMD=""</em>
+<hr>
 
 <h2>Concepts of this demonstration</h2>
 
