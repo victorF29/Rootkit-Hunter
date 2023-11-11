@@ -46,9 +46,17 @@ This command scans through all directories for anomalous files permissions, hidd
 
 Once scanning is done, Rootkit Hunter will save all the information in a log file. To open this file run the command:
 <code>nano /var/log/rkhunter.log</code>
+
+After checking the logs of the previous scan, rootkit hunter may give you warnings for specific files or directories. Before removing or deleting any of these files, make sure to check first whether the file is genuinely malicious or just a false positive. Rootkit Hunter will sometimes pick up false positives that do not require any action.
 <hr>
 
 ![nan](https://github.com/victorF29/Rootkit-Hunter/assets/145622790/fd258846-5825-4fd0-ab63-0fff9d57a6e3)
 <hr>
 
-After checking the logs of the previous scan, rootkit hunter may give you warnings for specific files or directories. Before removing or deleting any of these files, make sure to check first whether the file is genuinely malicious or just a false positive. Rootkit Hunter will sometimes pick up false positives that do not require any action.
+To set up scheduled scans run:
+<code>crontab -e</code>
+
+After running the command it will ask which editor to use, this example will use nano (select 1) since it is more simple to use.
+
+![crotab](https://github.com/victorF29/Rootkit-Hunter/assets/145622790/9a5cad56-234d-4eec-9819-bdfc6198373a)
+
