@@ -18,10 +18,22 @@ This demonstration will be going over how to install Rootkit Hunter, as well as 
 <em>Note: While these examples use Linux for the installation, the same steps apply to any Unix/Debian distribution. Just with slightly different commands.</em>
 
 Use:
-<code>apt install rkhunter</code>
+<code>sudo apt install rkhunter</code>
 
 This will begin the installation for Rootkit Hunter (rkhunter).
 <hr>
 
 ![rkdown](https://github.com/victorF29/Rootkit-Hunter/assets/145622790/62650922-938d-44a7-8f5c-9178098a95d7)
+<hr>
+
+Once installed use: 
+<code>rkhunter --update</code>
+
+This will update rootkit hunter to the latest version.
+
+<em>Note: if running the command above provides the error: "Invalid SCRIPTWHITELIST configuration option: Non-existent pathname: /bin/which" or any other subsequent "Invalid SCRIPTWHITELIST" error, this can be fixed by going into the /etc/rkhunter.conf file and looking for "SCRIPTWHITELIST <pathname>" and commenting out that line. </em>
+<hr>
+
+![update](https://github.com/victorF29/Rootkit-Hunter/assets/145622790/5cd28104-c0e3-447c-a667-72b5b7f8cf51)
+<hr>
 
